@@ -1,0 +1,158 @@
+X-Apparently-To: maxence.arutkin@yahoo.com; Thu, 08 Mar 2018 11:32:17 +0000
+Return-Path: <wiese@lpt.ens.fr>
+Received-SPF: none (domain of lpt.ens.fr does not designate permitted sender hosts)
+X-YMailISG: 9xJU3asWLDtiDlpGBH3aQztGCvsAoHlEJsnWaVBIN86VcbfW
+ gi62BCVgJXyLTdL5..WYeh0RbOIvg449pI5LkjUerTF_XpbJKoYZQIfhgE1p
+ hs3Hix71j4maL2oNi5tFhy7NIRgR2YDdbbVwJift.DTg9DBNIdCFxdyCdAcj
+ g8doqEP_4D9fpZKS0_R0frZd0U6_SFiHeq2Afvzi3w_NOnc6hu3Vd5HRIJs2
+ zloq3zkZm9Pg23ZDErE6SgjALiW5uxsvR3FLaEv4B86ZTe0_Ds0yrBeFLSrh
+ Gml7.cMaCTC.LUL3DJSd5tKcpffJhsCgO0jlzbLnibPZGo8U7wpmfskQr2oG
+ f58ARQzpJBSprUNJS9vv.7RWZ1jFdYwIVRaLVkS_DnUFaqbgmzAA0VdW6j8z
+ ByHBUZl0ttxjlYtZY1gym8DiHluoRmiF8X1GYbcxb1maxvrBexoNU9TjECSD
+ Ffv1NikaG2oUofFW0lUggxi3ShGdc9lLFoP5.MZut5Z2yua.R2XHtPBipmvK
+ yXyfs7ENa4x8Wpi_fJZkjR10EUy8pHYj.JSwfbAGMfqW0iO8QBFlI0ffDk2b
+ MpRMCQWmIVzatJfqwJ5JBws.vIYzJWcEfbDR5.EOXpoqLN9YEi1xW4H7X_gg
+ HXxXAbiTSVwOixilHFK7E6P2_6_H_pno4z2_5ypW5qnS_QoWAfEY1myIRxst
+ CKsOnVAq_8hrNtnvvW_zl8dmSuHn5isgL7Xi6cDQ_4AeYEVRH9jjPFwHNOaf
+ Fv1ksHdxhltfr0XE_WJeNt6WJ5pi7q_nZHBkQRI6xx3yKTbqC_Z2jotbw7pP
+ SUUFLh1By42yVInhgsq7RSjPq2VnFVz5Aj0acQWO4lOmWC4_UFrQhoFMEr2B
+ ltM31jdJcRGqW_hZlAnaPLFZzMIMc9UrVJ5o2zh0QpeZzSQ5gm7RjoBA8rV2
+ o_Hr1fDUEhDXH_XYlJ_iZADvUt96IopYl6y9UBpF5Yk14CpDYStlfp6Gkpzx
+ UFuivChdYzwCof8odNLtRgbmnEVIPdR60t2YOuleWUzxk9y.FcF8k0oaXt8c
+ ISFEL2TLAqVQ8uSoK_73s.pQ3ntq.tK6HCSNqK985A0mZzk0CaBHzGYO.gza
+ Iuuci_4WzRK4AvZCq2fp0R96BPi0zSa5ji7D1gWoZpUSQUnxZqIrANOPhsjQ
+ 1QfaMtTDLaIrGhJ0_07fMeUnF9D.XULo
+X-Originating-IP: [129.199.96.40]
+Authentication-Results: mta4388.mail.bf1.yahoo.com  from=lpt.ens.fr; domainkeys=neutral (no sig);  from=lpt.ens.fr; dkim=neutral (no sig)
+Received: from 127.0.0.1  (EHLO nef2.ens.fr) (129.199.96.40)
+  by mta4388.mail.bf1.yahoo.com with SMTP; Thu, 08 Mar 2018 11:32:15 +0000
+X-ENS-nef-client: 129.199.122.2
+Received: from mailhost.lpt.ens.fr (corto.lpt.ens.fr [129.199.122.2])
+          by nef2.ens.fr (8.13.6/1.01.28121999) with ESMTP id w28BWEhe069243
+          for <maxence.arutkin@yahoo.com>; Thu, 8 Mar 2018 12:32:14 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+	by mailhost.lpt.ens.fr (Postfix) with ESMTP id AE9C720169
+	for <maxence.arutkin@yahoo.com>; Thu,  8 Mar 2018 12:32:12 +0100 (CET)
+X-Virus-Scanned: by Amavis at lpt.ens.fr
+Received: from mailhost.lpt.ens.fr ([127.0.0.1])
+	by localhost (corto.lpt.ens.fr [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id sqjQl6wR5wcX for <maxence.arutkin@yahoo.com>;
+	Thu,  8 Mar 2018 12:32:12 +0100 (CET)
+Received: from grieg.lpt.ens.fr (grieg.lpt.ens.fr [129.199.122.153])
+	by mailhost.lpt.ens.fr (Postfix) with ESMTPSA id 9C86520166
+	for <maxence.arutkin@yahoo.com>; Thu,  8 Mar 2018 12:32:12 +0100 (CET)
+From: Kay Wiese <wiese@lpt.ens.fr>
+Content-Type: multipart/mixed;
+ boundary="Apple-Mail=_942A9B8C-1089-4560-953E-FB56686301DC"
+Mime-Version: 1.0 (Mac OS X Mail 10.3 \(3273\))
+Subject: more scripts
+Message-Id: <BDE5210C-7D9E-44CB-8012-816019DBBDF2@lpt.ens.fr>
+Date: Thu, 8 Mar 2018 12:32:13 +0100
+To: Maxence Arutkin <maxence.arutkin@yahoo.com>
+X-Mailer: Apple Mail (2.3273)
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.4.3 (nef2.ens.fr [129.199.96.32]); Thu, 08 Mar 2018 12:32:14 +0100 (CET)
+Content-Length: 3492
+
+
+--Apple-Mail=_942A9B8C-1089-4560-953E-FB56686301DC
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;
+	charset=us-ascii
+
+This goes into submit-local
+
+
+#tcsh
+cd ~/fBm-simulations
+set counterfile=seed.dat
+if (! -e $counterfile) then
+    set seed=1000
+else
+    set seed=`cat $counterfile`
+    set seed=`expr $seed + 1`
+endif
+echo $seed > $counterfile
+#rm script*
+set scriptfile=script$seed
+
+#echo submit "python -u fBm-2-boundaries.py" with seed = $seed
+echo "python -u fBm-2-boundaries.py $seed" >  $scriptfile
+echo "###################### submit-local start ########################"
+echo $scriptfile":" `cat  $scriptfile`
+chmod u+x ./$scriptfile
+tcsh ./$scriptfile > $scriptfile.out &
+set jobid=$!
+echo "job-id="$jobid
+renice 19 $jobid
+echo "####################### submit-local end #########################"
+
+
+
+
+
+
+
+
+Dr. Kay Wiese
+Directeur de Recherche au CNRS
+Laboratoire de Physique Theorique 
+Ecole Normale Superieure
+24 rue Lhomond
+75005 Paris
+France
+Tel.: 00331.44.32.25.39
+http://www.phys.ens.fr/~wiese
+
+
+
+
+--Apple-Mail=_942A9B8C-1089-4560-953E-FB56686301DC
+Content-Disposition: attachment;
+	filename=network-update-loop
+Content-Type: application/octet-stream;
+	x-unix-mode=0755;
+	name="network-update-loop"
+Content-Transfer-Encoding: 7bit
+
+#!/bin/tcsh
+# this is /Users/wiese/Apps/network-update
+
+# this is the complete list
+set list="mussorgsky martinu petrassi chopin rossini rodrigo schoenberg satie ravel stravinsky scriabine schubert rachmaninov cimarosa strauss scarlatti cui corelli smetana berlioz balakirev britten stockhausen sor sibelius boulanger bellini schumann borodine bruckner bartok byrd boulez bernstein bach brian busnois brahms pfitzner"
+
+# this is the list with non-working logins removed
+set list="mussorgsky martinu petrassi chopin rossini rodrigo schoenberg satie ravel stravinsky scriabine schubert rachmaninov cimarosa strauss scarlatti cui corelli smetana berlioz balakirev britten stockhausen sor sibelius boulanger schumann borodine bruckner bartok byrd boulez bernstein bach brian busnois brahms"
+
+while (1<2)
+@ alljobs = 0
+foreach name ($list)
+	echo '***************** '$name' *****************'
+	ssh -o ConnectTimeout=1 -o NumberOfPasswordPrompts=0 -o ConnectionAttempts=1 wiese@$name.lpt.ens.fr 'ps auxrw --sort -pcpu,-pmem' > test123
+ssh -o ConnectTimeout=1 -o NumberOfPasswordPrompts=0 -o ConnectionAttempts=1 wiese@$name.lpt.ens.fr 'ps rw -G doctorants,invites,permanents,visiteurs -o user,%cpu,%mem,ni=NICE,stat=STATUS,start_time,time,comm' > test123
+	#cat test123
+	set load = `cat test123 | countlines`
+	cat test123 | egrep wiese | egrep python
+	set jobs = `cat test123 | egrep wiese| egrep python | countlines`
+	echo "Kays local jobs = " $jobs 
+	echo "load = " $load
+	if ($jobs>1) then 
+	    echo "#################WARNING##############"
+	    echo "#################WARNING##############"
+	    echo "#################WARNING##############"
+	    echo "#################WARNING##############"
+	    mail -s $HOST wiese@lpt.ens.fr < test123
+	endif
+	# the load>0 should avoid adding a new job if the machine did not reply
+	if ($jobs<1 && $load>0) then 
+		ssh -o ConnectTimeout=1 -o NumberOfPasswordPrompts=0 -o ConnectionAttempts=1 wiese@$name.lpt.ens.fr 'cd fBm-simulations; ./submit-local'
+	endif
+	@  alljobs = $alljobs + $jobs
+end
+echo '**********************************'
+echo Kays total running jobs = $alljobs
+echo '**********************************'
+echo sleeping
+sleep 5000
+end
+
+--Apple-Mail=_942A9B8C-1089-4560-953E-FB56686301DC--

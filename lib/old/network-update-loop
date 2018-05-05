@@ -1,0 +1,40 @@
+#!/bin/tcsh
+# this is /Users/wiese/Apps/network-update
+
+# this is the complete list
+set list="mussorgsky martinu petrassi chopin rossini rodrigo schoenberg satie ravel stravinsky scriabine schubert rachmaninov cimarosa strauss scarlatti cui corelli smetana berlioz balakirev britten stockhausen sor sibelius boulanger bellini schumann borodine bruckner bartok byrd boulez bernstein bach brian busnois brahms pfitzner"
+
+# this is the list with non-working logins removed
+set list="mussorgsky martinu petrassi chopin rossini rodrigo schoenberg satie ravel stravinsky scriabine schubert rachmaninov cimarosa strauss scarlatti cui corelli smetana berlioz balakirev britten stockhausen sor sibelius boulanger schumann borodine bruckner bartok byrd boulez bernstein bach brian busnois brahms"
+
+while (1<2)
+@ alljobs = 0
+foreach name ($list)
+	echo '***************** '$name' *****************'
+	ssh -o ConnectTimeout=1 -o NumberOfPasswordPrompts=0 -o ConnectionAttempts=1 wiese@$name.lpt.ens.fr 'ps auxrw --sort -pcpu,-pmem' > test123
+ssh -o ConnectTimeout=1 -o NumberOfPasswordPrompts=0 -o ConnectionAttempts=1 wiese@$name.lpt.ens.fr 'ps rw -G doctorants,invites,permanents,visiteurs -o user,%cpu,%mem,ni=NICE,stat=STATUS,start_time,time,comm' > test123
+	#cat test123
+	set load = `cat test123 | countlines`
+	cat test123 | egrep wiese | egrep python
+	set jobs = `cat test123 | egrep wiese| egrep python | countlines`
+	echo "Kays local jobs = " $jobs 
+	echo "load = " $load
+	if ($jobs>1) then 
+	    echo "#################WARNING##############"
+	    echo "#################WARNING##############"
+	    echo "#################WARNING##############"
+	    echo "#################WARNING##############"
+	    mail -s $HOST wiese@lpt.ens.fr < test123
+	endif
+	# the load>0 should avoid adding a new job if the machine did not reply
+	if ($jobs<1 && $load>0) then 
+		ssh -o ConnectTimeout=1 -o NumberOfPasswordPrompts=0 -o ConnectionAttempts=1 wiese@$name.lpt.ens.fr 'cd fBm-simulations; ./submit-local'
+	endif
+	@  alljobs = $alljobs + $jobs
+end
+echo '**********************************'
+echo Kays total running jobs = $alljobs
+echo '**********************************'
+echo sleeping
+sleep 5000
+end

@@ -1,0 +1,26 @@
+This goes into submit-local
+
+
+#tcsh
+cd ~/fBm-simulations
+set counterfile=seed.dat
+if (! -e $counterfile) then
+    set seed=1000
+else
+    set seed=`cat $counterfile`
+    set seed=`expr $seed + 1`
+endif
+echo $seed > $counterfile
+#rm script*
+set scriptfile=script$seed
+
+#echo submit "python -u fBm-2-boundaries.py" with seed = $seed
+echo "python -u fBm-2-boundaries.py $seed" >  $scriptfile
+echo "###################### submit-local start ########################"
+echo $scriptfile":" `cat  $scriptfile`
+chmod u+x ./$scriptfile
+tcsh ./$scriptfile > $scriptfile.out &
+set jobid=$!
+echo "job-id="$jobid
+renice 19 $jobid
+echo "####################### submit-local end #########################"
