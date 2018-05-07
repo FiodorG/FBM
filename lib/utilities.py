@@ -33,8 +33,23 @@ def G0(m, t):
     return m / (2. * np.sqrt(math.pi) * t**1.5) * math.exp(- m * m / 4. / t)
 
 
+def R(z, H):
+    return R0Plus(z) * math.exp((H - 0.5) * W(z))
+
+
 def R0Plus(z):
     return z* math.exp(- z * z / 2.)
+
+def W(z):
+
+    return \
+        (
+            z**4 * float(mpmath.hyp2f2(1., 1., 5. / 2., 3., z * z / 2.)) / 6.
+          + math.pi * (1. - z * z) * scipy.special.erfi(z / math.sqrt(2.))
+          + math.sqrt(2. * math.pi) * math.exp(z * z / 2.) * z
+          + (z * z - 2.) * (math.log(2. * z * z) + np.euler_gamma)
+          - 3. * z * z
+        )
 
 
 def G1(m, t):
@@ -45,17 +60,6 @@ def G1(m, t):
         (
             I_func(z)
           + (z * z - 1.) * math.log(t)
-          + z * z * (math.log(2. * z * z) + np.euler_gamma)
-          - 4. * math.log(z)
-          - 4. * np.euler_gamma
-        )
-
-def W(z):
-
-    return \
-        0.5 * G0(m, t) * \
-        (
-            I_func(z)
           + z * z * (math.log(2. * z * z) + np.euler_gamma)
           - 4. * math.log(z)
           - 4. * np.euler_gamma
@@ -121,7 +125,7 @@ def eigenvalues(N, H):
     return np.sqrt(np.real(np.fft.ifft(covariances)))
 
 
-def fbm_path(N, H, eigenvalues, drift):
+def fbm_path(X0, N, H, eigenvalues, drift):
     """
     Technically using different seeds do not guarantee
     that numbers are going to be independant between
@@ -139,7 +143,7 @@ def fbm_path(N, H, eigenvalues, drift):
     W[N + 1:2 * N] = W2[::-1]
 
     Z = np.real(np.fft.fft(eigenvalues * W))
-    return np.cumsum(Z[0:N]) / N**H + drift
+    return (X0 + np.cumsum(Z[0:N])) / math.sqrt(2.) / N**H + drift
 
 
 def drift(mu, nu, N, H):
@@ -222,6 +226,33 @@ def plot_G0(x, mu, nu, H, N, m, results):
     plt.ylabel('G0')
     ax.legend(['analytic', 'empirical'])
     ax.set_title('G0(simu) vs G0')
+    ax.grid(True)
+    plt.show()
+
+
+def plot_W(H, N, results):
+    """
+    """
+    results = results[~np.isnan(results)]
+
+    hist = np.histogram(results, bins=40, range=(np.min(results), 2.5), density=True)
+
+    R_values = hist[0][:-1]
+    R_bins = (hist[1][1:-1] + hist[1][:-2]) * 0.5
+
+    R_simulated = [math.log(r / R0Plus(z)) / (H - 0.5) for r, z in zip(R_values, R_bins)]
+    R_analytical = [W(z) for z in R_bins]
+
+#    R_simulated = [r for r, z in zip(R_values, R_bins)]
+#    R_analytical = [R0Plus(z) for z in R_bins]
+
+    fig = plt.figure(figsize=(8, 8))
+    ax = fig.add_subplot(111)
+    ax.scatter(R_bins, R_simulated, c='r', marker='+')
+    ax.plot(R_bins, R_analytical)
+    plt.xlabel('y')
+    plt.ylabel('W')
+    ax.legend(['analytic', 'empirical'])
     ax.grid(True)
     plt.show()
 
